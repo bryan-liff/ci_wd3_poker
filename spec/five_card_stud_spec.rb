@@ -26,20 +26,22 @@ describe FiveCardStud do
   describe "Methods" do
     describe ':: Class' do
       describe '::rank([[...], [...], ...])' do
-        let(:hands) do
-          [
-            ['queen of hearts', 'king of spades', '3 of diamonds', '6 of clubs', 'jack of clubs'],
-            ['2 of spades','2 of clubs', 'jack of diamonds', '7 of hearts', '9 of spades']
-          ]
-        end
+        let(:high_card){ ['queen of hearts', 'king of spades', '3 of diamonds', '6 of clubs', 'jack of clubs'] }
+        let(:one_pair){ ['2 of spades','2 of clubs', 'jack of diamonds', '7 of hearts', '9 of spades'] }
+        let(:full_house){ ['2 of hearts','2 of diamonds', '7 of diamons', '7 of spades', '7 of clubs'] }
 
+        let(:hands){ [high_card, one_pair, full_house] }
         let(:ranking){ described_class.rank(hands) }
 
         it 'should return an Array of Arrays of hands' do
           expect(ranking).to be_an(Array)
           expect(ranking.first).to be_an(Array)
         end
-        it 'should order the hands from highest to lowest'
+        it 'should order the hands from highest to lowest' do
+          expect(ranking[0]).to eq(full_house)
+          expect(ranking[2]).to eq(one_pair)
+          expect(ranking[1]).to eq(high_card)
+        end
       end
     end #Instance
   end #Methods
