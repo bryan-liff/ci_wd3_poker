@@ -3,7 +3,6 @@ class FiveCardStud
 
   attr_reader :hands
 
-=begin
   def play(players: 2)
     # shuffle
 
@@ -13,8 +12,8 @@ class FiveCardStud
 
     # print winner & hand
   end
-=end
 
-  def rank
+  def self.rank(hands_arr)
+    hands_arr
   end
 end
