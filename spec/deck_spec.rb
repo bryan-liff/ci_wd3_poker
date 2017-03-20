@@ -28,6 +28,9 @@ describe Deck do
           expect(described_class.shuffle.count).to eq(52)
         end
       end
+      describe "::card_value(card_str)" do
+        it 'returns the numeric or face value of a given card'
+      end
     end
 
     describe "# Instance" do
