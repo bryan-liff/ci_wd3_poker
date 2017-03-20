@@ -28,7 +28,7 @@ describe FiveCardStud do
       describe '::rank([[...], [...], ...])' do
         let(:high_card){ ['queen of hearts', 'king of spades', '3 of diamonds', '6 of clubs', 'jack of clubs'] }
         let(:one_pair){ ['2 of spades','2 of clubs', 'jack of diamonds', '7 of hearts', '9 of spades'] }
-        let(:full_house){ ['2 of hearts','2 of diamonds', '7 of diamons', '7 of spades', '7 of clubs'] }
+        let(:full_house){ ['2 of hearts','2 of diamonds', '7 of diamonds', '7 of spades', '7 of clubs'] }
 
         let(:hands){ [high_card, one_pair, full_house] }
         let(:ranking){ described_class.rank(hands) }
