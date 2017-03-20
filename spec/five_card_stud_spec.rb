@@ -32,11 +32,14 @@ describe FiveCardStud do
             ['2 of spades','2 of clubs', 'jack of diamonds', '7 of hearts', '9 of spades']
           ]
         end
+
+        let(:ranking){ described_class.rank(hands) }
+
         it 'should return an Array of Arrays of hands' do
-          ranking = described_class.rank(hands)
           expect(ranking).to be_an(Array)
           expect(ranking.first).to be_an(Array)
         end
+        it 'should order the hands from highest to lowest'
       end
     end #Instance
   end #Methods
